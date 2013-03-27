@@ -8,8 +8,13 @@
 #include <cv.h>
 #include <highgui.h>
 
+#define WHITE !0
+#define BLACK 0
+
 void frame_diff(IplImage *src, IplImage *bg, IplImage *new_bg);
+void frame_diff_color(IplImage *src, IplImage *bg, IplImage *new_bg);
 void showGrayImage(const char *name, IplImage *img);
+void noise_reduce(IplImage *image, int noise_color, int num);
 
 int main(int argc, char **argv)
 {
@@ -25,7 +30,7 @@ int main(int argc, char **argv)
     while (1) {
         frame = cvQueryFrame(capture);
         
-        char c = cvWaitKey(33);
+        char c = cvWaitKey(50);
         
         switch (c) {
             case 's':
@@ -73,6 +78,10 @@ void frame_diff(IplImage *src, IplImage *bg, IplImage *new_bg)
 
     // 差分画像を2値化
     cvThreshold(mask, mask, 10, 255, CV_THRESH_BINARY);
+    // ノイズ除去
+    noise_reduce(mask, WHITE, 2);
+    noise_reduce(mask, BLACK, 2);
+    cvShowImage("MASK", mask);
     
     // 背景部分に背景を挿入
     cvNot(mask, mask);
@@ -83,6 +92,45 @@ void frame_diff(IplImage *src, IplImage *bg, IplImage *new_bg)
     cvReleaseImage(&mask);
 }
 
+void frame_diff_color(IplImage *src, IplImage *bg, IplImage *new_bg)
+{
+    IplImage *color_sub;
+    IplImage *gray1, *gray2, *gray3;
+    IplImage *mask;
+    color_sub = cvCreateImage(cvGetSize(src), src->depth, src->nChannels);
+    mask = cvCreateImage(cvGetSize(src), src->depth, 1);
+    gray1 = cvCreateImage(cvGetSize(src), src->depth, 1);
+    gray2 = cvCreateImage(cvGetSize(src), src->depth, 1);
+    gray3 = cvCreateImage(cvGetSize(src), src->depth, 1);
+
+    // カラー絶対値差分画像を取得
+    cvAbsDiff(src, bg, color_sub);
+
+    // カラー絶対値差分画像をチャンネルごとに2値化
+    cvSplit(color_sub, gray1, gray2, gray3, NULL);
+    cvThreshold(gray1, gray1, 15, 255, CV_THRESH_BINARY);
+    cvThreshold(gray2, gray2, 15, 255, CV_THRESH_BINARY);
+    cvThreshold(gray3, gray3, 15, 255, CV_THRESH_BINARY);
+
+    // 2値化した差分の論理和を取りマスクを得る
+    cvOr(gray1, gray2, gray2);
+    cvOr(gray2, gray3, mask);
+
+    // ノイズ除去
+    noise_reduce(mask, WHITE, 2);
+    noise_reduce(mask, BLACK, 2);
+    cvShowImage("MASK", mask);
+
+    // 背景部分に背景を挿入
+    cvNot(mask, mask);
+    cvCopy(new_bg, src, mask);
+
+    cvReleaseImage(&gray1);
+    cvReleaseImage(&gray2);
+    cvReleaseImage(&gray3);
+    cvReleaseImage(&mask);
+}
+
 void showGrayImage(const char *name, IplImage *img)
 {
     IplImage *gray_img = cvCreateImage(cvGetSize(img), img->depth, 1);
@@ -90,4 +138,20 @@ void showGrayImage(const char *name, IplImage *img)
 
     cvShowImage(name, gray_img);
     cvReleaseImage(&gray_img);
+}
+
+void noise_reduce(IplImage *image, int noise_color, int num)
+{
+    if (noise_color == WHITE) {
+        for (int i=0; i<num; i++)
+            cvErode(image, image);
+    }
+
+    for (int i=0; i<num; i++)
+        cvDilate(image, image);
+
+    if (noise_color == BLACK) {
+        for (int i=0; i<num; i++)
+            cvErode(image, image);
+    }
 }
