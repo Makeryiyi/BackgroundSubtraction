@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5416B89F16F31A860041A264 /* libopencv_imgproc.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5416B89E16F31A860041A264 /* libopencv_imgproc.2.4.4.dylib */; };
-		54479CD41702B9920085D0B2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54479CD21702B9920085D0B2 /* main.cpp */; };
+		54479CD41702B9920085D0B2 /* FrameSubtraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54479CD21702B9920085D0B2 /* FrameSubtraction.cpp */; };
 		546C416D16F3034B00CE4FF1 /* OpenCVTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 546C416C16F3034B00CE4FF1 /* OpenCVTest.1 */; };
-		548F6E7D16F319D800185F95 /* libopencv_highgui.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 548F6E7C16F319D800185F95 /* libopencv_highgui.2.4.4.dylib */; };
-		54E642A616F31A5C00B9A7A8 /* libopencv_core.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E642A516F31A5C00B9A7A8 /* libopencv_core.2.4.4.dylib */; };
+		54A97D98172A47B600B63268 /* libopencv_core.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A97D87172A47B600B63268 /* libopencv_core.2.4.4.dylib */; };
+		54A97D9C172A47B600B63268 /* libopencv_highgui.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A97D8B172A47B600B63268 /* libopencv_highgui.2.4.4.dylib */; };
+		54A97D9D172A47B600B63268 /* libopencv_imgproc.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A97D8C172A47B600B63268 /* libopencv_imgproc.2.4.4.dylib */; };
+		54A97DA1172A47B600B63268 /* libopencv_objdetect.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A97D90172A47B600B63268 /* libopencv_objdetect.2.4.4.dylib */; };
+		54A97DA7172A480800B63268 /* libopencv_core.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A97D87172A47B600B63268 /* libopencv_core.2.4.4.dylib */; };
+		54A97DA8172A480800B63268 /* libopencv_highgui.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A97D8B172A47B600B63268 /* libopencv_highgui.2.4.4.dylib */; };
+		54A97DA9172A480800B63268 /* libopencv_imgproc.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A97D8C172A47B600B63268 /* libopencv_imgproc.2.4.4.dylib */; };
+		54A97DAA172A480800B63268 /* libopencv_objdetect.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A97D90172A47B600B63268 /* libopencv_objdetect.2.4.4.dylib */; };
+		54C11A211702E68A00EE996F /* OpenCVTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 546C416C16F3034B00CE4FF1 /* OpenCVTest.1 */; };
+		54C11A291702E76F00EE996F /* backgroundAverage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54C11A261702E75900EE996F /* backgroundAverage.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,15 +32,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		54C11A201702E68A00EE996F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				54C11A211702E68A00EE996F /* OpenCVTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5416B89E16F31A860041A264 /* libopencv_imgproc.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.2.4.4.dylib; path = ../../../../opt/local/lib/libopencv_imgproc.2.4.4.dylib; sourceTree = "<group>"; };
-		54479CD21702B9920085D0B2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		546C416716F3034B00CE4FF1 /* OpenCVTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenCVTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54479CD21702B9920085D0B2 /* FrameSubtraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameSubtraction.cpp; sourceTree = "<group>"; };
+		546C416716F3034B00CE4FF1 /* FrameSubtraction */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FrameSubtraction; sourceTree = BUILT_PRODUCTS_DIR; };
 		546C416C16F3034B00CE4FF1 /* OpenCVTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = OpenCVTest.1; sourceTree = "<group>"; };
-		548F6E7C16F319D800185F95 /* libopencv_highgui.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.2.4.4.dylib; path = ../../../../opt/local/lib/libopencv_highgui.2.4.4.dylib; sourceTree = "<group>"; };
-		54E642A516F31A5C00B9A7A8 /* libopencv_core.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.4.dylib; path = ../../../../opt/local/lib/libopencv_core.2.4.4.dylib; sourceTree = "<group>"; };
+		54A97D87172A47B600B63268 /* libopencv_core.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.4.dylib; path = ../LinkLibraries/lib/libopencv_core.2.4.4.dylib; sourceTree = "<group>"; };
+		54A97D8B172A47B600B63268 /* libopencv_highgui.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.2.4.4.dylib; path = ../LinkLibraries/lib/libopencv_highgui.2.4.4.dylib; sourceTree = "<group>"; };
+		54A97D8C172A47B600B63268 /* libopencv_imgproc.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.2.4.4.dylib; path = ../LinkLibraries/lib/libopencv_imgproc.2.4.4.dylib; sourceTree = "<group>"; };
+		54A97D90172A47B600B63268 /* libopencv_objdetect.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.2.4.4.dylib; path = ../LinkLibraries/lib/libopencv_objdetect.2.4.4.dylib; sourceTree = "<group>"; };
+		54C11A251702E68A00EE996F /* FrameSubtraction copy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "FrameSubtraction copy"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C11A261702E75900EE996F /* backgroundAverage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = backgroundAverage.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +61,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5416B89F16F31A860041A264 /* libopencv_imgproc.2.4.4.dylib in Frameworks */,
-				54E642A616F31A5C00B9A7A8 /* libopencv_core.2.4.4.dylib in Frameworks */,
-				548F6E7D16F319D800185F95 /* libopencv_highgui.2.4.4.dylib in Frameworks */,
+				54A97D98172A47B600B63268 /* libopencv_core.2.4.4.dylib in Frameworks */,
+				54A97D9C172A47B600B63268 /* libopencv_highgui.2.4.4.dylib in Frameworks */,
+				54A97D9D172A47B600B63268 /* libopencv_imgproc.2.4.4.dylib in Frameworks */,
+				54A97DA1172A47B600B63268 /* libopencv_objdetect.2.4.4.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54C11A1C1702E68A00EE996F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A97DA7172A480800B63268 /* libopencv_core.2.4.4.dylib in Frameworks */,
+				54A97DA8172A480800B63268 /* libopencv_highgui.2.4.4.dylib in Frameworks */,
+				54A97DA9172A480800B63268 /* libopencv_imgproc.2.4.4.dylib in Frameworks */,
+				54A97DAA172A480800B63268 /* libopencv_objdetect.2.4.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +85,10 @@
 		546C415E16F3034B00CE4FF1 = {
 			isa = PBXGroup;
 			children = (
-				5416B89E16F31A860041A264 /* libopencv_imgproc.2.4.4.dylib */,
-				54E642A516F31A5C00B9A7A8 /* libopencv_core.2.4.4.dylib */,
-				548F6E7C16F319D800185F95 /* libopencv_highgui.2.4.4.dylib */,
+				54A97D87172A47B600B63268 /* libopencv_core.2.4.4.dylib */,
+				54A97D8B172A47B600B63268 /* libopencv_highgui.2.4.4.dylib */,
+				54A97D8C172A47B600B63268 /* libopencv_imgproc.2.4.4.dylib */,
+				54A97D90172A47B600B63268 /* libopencv_objdetect.2.4.4.dylib */,
 				546C416916F3034B00CE4FF1 /* OpenCVTest */,
 				546C416816F3034B00CE4FF1 /* Products */,
 			);
@@ -64,7 +97,8 @@
 		546C416816F3034B00CE4FF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				546C416716F3034B00CE4FF1 /* OpenCVTest */,
+				546C416716F3034B00CE4FF1 /* FrameSubtraction */,
+				54C11A251702E68A00EE996F /* FrameSubtraction copy */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,7 +106,8 @@
 		546C416916F3034B00CE4FF1 /* OpenCVTest */ = {
 			isa = PBXGroup;
 			children = (
-				54479CD21702B9920085D0B2 /* main.cpp */,
+				54479CD21702B9920085D0B2 /* FrameSubtraction.cpp */,
+				54C11A261702E75900EE996F /* backgroundAverage.cpp */,
 				546C416C16F3034B00CE4FF1 /* OpenCVTest.1 */,
 			);
 			path = OpenCVTest;
@@ -81,9 +116,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		546C416616F3034B00CE4FF1 /* OpenCVTest */ = {
+		546C416616F3034B00CE4FF1 /* FrameSubtraction */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 546C417016F3034B00CE4FF1 /* Build configuration list for PBXNativeTarget "OpenCVTest" */;
+			buildConfigurationList = 546C417016F3034B00CE4FF1 /* Build configuration list for PBXNativeTarget "FrameSubtraction" */;
 			buildPhases = (
 				546C416316F3034B00CE4FF1 /* Sources */,
 				546C416416F3034B00CE4FF1 /* Frameworks */,
@@ -93,9 +128,26 @@
 			);
 			dependencies = (
 			);
-			name = OpenCVTest;
+			name = FrameSubtraction;
 			productName = OpenCVTest;
-			productReference = 546C416716F3034B00CE4FF1 /* OpenCVTest */;
+			productReference = 546C416716F3034B00CE4FF1 /* FrameSubtraction */;
+			productType = "com.apple.product-type.tool";
+		};
+		54C11A191702E68A00EE996F /* BackgroundAverage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54C11A221702E68A00EE996F /* Build configuration list for PBXNativeTarget "BackgroundAverage" */;
+			buildPhases = (
+				54C11A1A1702E68A00EE996F /* Sources */,
+				54C11A1C1702E68A00EE996F /* Frameworks */,
+				54C11A201702E68A00EE996F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BackgroundAverage;
+			productName = OpenCVTest;
+			productReference = 54C11A251702E68A00EE996F /* FrameSubtraction copy */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +171,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				546C416616F3034B00CE4FF1 /* OpenCVTest */,
+				546C416616F3034B00CE4FF1 /* FrameSubtraction */,
+				54C11A191702E68A00EE996F /* BackgroundAverage */,
 			);
 		};
 /* End PBXProject section */
@@ -129,7 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54479CD41702B9920085D0B2 /* main.cpp in Sources */,
+				54479CD41702B9920085D0B2 /* FrameSubtraction.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54C11A1A1702E68A00EE996F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54C11A291702E76F00EE996F /* backgroundAverage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +280,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/opt/local/lib,
+					"\"$(SRCROOT)/../LinkLibraries/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -230,8 +292,35 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/opt/local/lib,
+					"\"$(SRCROOT)/../LinkLibraries/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		54C11A231702E68A00EE996F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+					"\"$(SRCROOT)/../LinkLibraries/lib\"",
+					"\"$(SRCROOT)/lib\"",
+				);
+				PRODUCT_NAME = "FrameSubtraction copy";
+			};
+			name = Debug;
+		};
+		54C11A241702E68A00EE996F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+					"\"$(SRCROOT)/../LinkLibraries/lib\"",
+					"\"$(SRCROOT)/lib\"",
+				);
+				PRODUCT_NAME = "FrameSubtraction copy";
 			};
 			name = Release;
 		};
@@ -247,11 +336,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		546C417016F3034B00CE4FF1 /* Build configuration list for PBXNativeTarget "OpenCVTest" */ = {
+		546C417016F3034B00CE4FF1 /* Build configuration list for PBXNativeTarget "FrameSubtraction" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				546C417116F3034B00CE4FF1 /* Debug */,
 				546C417216F3034B00CE4FF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54C11A221702E68A00EE996F /* Build configuration list for PBXNativeTarget "BackgroundAverage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54C11A231702E68A00EE996F /* Debug */,
+				54C11A241702E68A00EE996F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

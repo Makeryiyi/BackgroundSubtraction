@@ -30,10 +30,13 @@ int main(int argc, char **argv)
     while (1) {
         frame = cvQueryFrame(capture);
         
-        char c = cvWaitKey(50);
+        char c = cvWaitKey(1);
         
         switch (c) {
             case 's':
+                if (bg_img) {
+                    cvReleaseImage(&bg_img);
+                }
                 bg_img = cvCreateImage(cvGetSize(frame), frame->depth, frame->nChannels);
                 cvCopy(frame, bg_img, NULL);
                 showGrayImage("background-gray", bg_img);
@@ -48,7 +51,7 @@ int main(int argc, char **argv)
         showGrayImage("frame-gray", frame);
 
         if (flag) {
-            frame_diff(frame, bg_img, new_bg);
+            frame_diff_color(frame, bg_img, new_bg);
         }
 
         cvShowImage("frame", frame);
@@ -117,14 +120,15 @@ void frame_diff_color(IplImage *src, IplImage *bg, IplImage *new_bg)
     cvOr(gray2, gray3, mask);
 
     // ノイズ除去
-    noise_reduce(mask, WHITE, 2);
-    noise_reduce(mask, BLACK, 2);
-    cvShowImage("MASK", mask);
+//    noise_reduce(mask, WHITE, 2);
+//    noise_reduce(mask, BLACK, 2);
+//    cvShowImage("MASK", mask);
 
     // 背景部分に背景を挿入
     cvNot(mask, mask);
     cvCopy(new_bg, src, mask);
 
+    cvReleaseImage(&color_sub);
     cvReleaseImage(&gray1);
     cvReleaseImage(&gray2);
     cvReleaseImage(&gray3);

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "546C416616F3034B00CE4FF1"
-               BuildableName = "OpenCVTest"
-               BlueprintName = "OpenCVTest"
+               BlueprintIdentifier = "54C11A191702E68A00EE996F"
+               BuildableName = "FrameSubtraction copy"
+               BlueprintName = "BackgroundAverage"
                ReferencedContainer = "container:OpenCVTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "546C416616F3034B00CE4FF1"
-            BuildableName = "OpenCVTest"
-            BlueprintName = "OpenCVTest"
+            BlueprintIdentifier = "54C11A191702E68A00EE996F"
+            BuildableName = "FrameSubtraction copy"
+            BlueprintName = "BackgroundAverage"
             ReferencedContainer = "container:OpenCVTest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,9 +51,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "546C416616F3034B00CE4FF1"
-            BuildableName = "OpenCVTest"
-            BlueprintName = "OpenCVTest"
+            BlueprintIdentifier = "54C11A191702E68A00EE996F"
+            BuildableName = "FrameSubtraction copy"
+            BlueprintName = "BackgroundAverage"
             ReferencedContainer = "container:OpenCVTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,9 +69,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "546C416616F3034B00CE4FF1"
-            BuildableName = "OpenCVTest"
-            BlueprintName = "OpenCVTest"
+            BlueprintIdentifier = "54C11A191702E68A00EE996F"
+            BuildableName = "FrameSubtraction copy"
+            BlueprintName = "BackgroundAverage"
             ReferencedContainer = "container:OpenCVTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
