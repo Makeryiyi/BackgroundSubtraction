@@ -15,6 +15,7 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <time.h>
+#include <sys/time.h>
 
 struct Arg {
     IplImage *srcImage;
@@ -29,7 +30,7 @@ void *filter(void *_arg) {
     IplImage *dstImage = arg->dstImage;
     int size = arg->size;
     int num = arg->num;
-    printf("%d\n", num);
+
     for (int r = 0; r < srcImage->height;r++) {
         for (int c=0;c<srcImage->width;c+=4) {
             int cc = c + num;
@@ -75,22 +76,26 @@ void meanFilter(IplImage *srcImage, IplImage *dstImage, int size)
     }
 }
 
+double get_time(struct timeval *time)
+{
+    return ((double)(time->tv_sec)*1000 + (double)(time->tv_usec)*0.001);
+}
 
 int main() {
     IplImage *srcImage = cvLoadImage("/Users/kuno_lab/Pictures/bg.jpg");
     IplImage *dstImage = cvCreateImage(cvGetSize(srcImage), srcImage->depth, srcImage->nChannels);
     
-    clock_t start, end;
-
+    timeval start,end;
+    
     printf("start\n");
-    start = clock();
-
+    gettimeofday(&start, NULL);
+    
     meanFilter(srcImage, dstImage, 51);
 
-    end = clock();
+    gettimeofday(&end, NULL);
+
     printf("end\n");
-    
-    printf("%lf[s]\n", (((double)end-(double)start)/(double)CLOCKS_PER_SEC));
+    printf("%lf[ms]", get_time(&end) - get_time(&start));
 
     cvShowImage("srcImage", srcImage);
     cvShowImage("dstImage", dstImage);
