@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH, new_bg->width);
     cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT, new_bg->height);
     
-    
+    CvVideoWriter *vw = cvCreateVideoWriter("/Users/kuno_lab/Pictures/test.avi", CV_FOURCC('X', 'V', 'I', 'D'), 15, cvSize(new_bg->width, new_bg->height), 1);
     int flag = 0;
     
     while (1) {
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
                 }
                 bg_img = cvCreateImage(cvGetSize(frame), frame->depth, frame->nChannels);
                 cvCopy(frame, bg_img, NULL);
-                showGrayImage("background-gray", bg_img);
+//                showGrayImage("background-gray", bg_img);
                 break;
             case 'c' :
                 flag = !flag;
@@ -55,11 +55,12 @@ int main(int argc, char **argv)
         }
 
         cvShowImage("frame", frame);
-        
+        cvWriteFrame(vw, frame);
         if (c == 27) break;
     }
     cvReleaseImage(&new_bg);
     cvReleaseImage(&bg_img);
+    cvReleaseVideoWriter(&vw);
     cvDestroyAllWindows();
     
     return 0;

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BackgroundAverage copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>BackgroundAverage.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -14,10 +19,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>meanFilter.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>546C416616F3034B00CE4FF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>547FBB05174F3B7100696D8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>547FBB0F174F3E2300696D8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
